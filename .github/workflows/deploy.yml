@@ -1,8 +1,9 @@
-name: publish-to-github-pages
+name: 🚀 Deploy to GitHub Pages
+
 on:
   push:
     branches:
-      - master
+      - main
 
 permissions:
   contents: read
@@ -22,15 +23,17 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Node.js ⚙️ - Cache dependencies ⚡ - Install dependencies 🔧
-        uses: ./.github/workflows/setup-node
-
-      - name: Setup Pages ⚙️
-        uses: actions/configure-pages@v4
+        uses: actions/setup-node@v3
         with:
-          static_site_generator: next
+          node-version: '16'
+
+      - name: Install dependencies
+        run: npm install
 
       - name: Build with Next.js 🏗️
-        run: npx next build
+        run: |
+          npm run build
+          npm run export
 
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3
@@ -46,6 +49,6 @@ jobs:
     needs: build
 
     steps:
-      - name: Publish to GitHub Pages 🚀
+      - name: Deploy to GitHub Pages 🚀
         id: deployment
         uses: actions/deploy-pages@v4

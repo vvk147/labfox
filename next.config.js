@@ -10,6 +10,10 @@ const nextConfig = {
       },
     ],
   },
+  // Static export configuration
+  output: 'export',
+  assetPrefix: './',
+  trailingSlash: true,
 };
 
 module.exports = nextConfig;
