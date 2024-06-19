@@ -12,7 +12,7 @@ const nextConfig = {
   },
   // Static export configuration
   output: 'export',
-  assetPrefix: './',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/labfox/' : '',
   trailingSlash: true,
 };
 
