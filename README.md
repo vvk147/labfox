@@ -66,5 +66,4 @@ Open http://localhost:3000 with your browser to see the result.
    Run the following commands to export your Next.js app as a static site:
    ```
    npm run build
-   npm run export
    ```
