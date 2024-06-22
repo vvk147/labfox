@@ -43,7 +43,7 @@ const Header = () => {
       <header
         className={`header left-0 top-0 z-40 flex w-full items-center ${
           sticky
-            ? "dark:bg-black dark:shadow-sticky-dark fixed z-[9999] bg-white !bg-opacity-80 shadow-sticky backdrop-blur-sm transition"
+            ? "fixed z-[9999] bg-white !bg-opacity-80 shadow-sticky backdrop-blur-sm transition dark:bg-black dark:shadow-sticky-dark"
             : "absolute bg-transparent"
         }`}
       >
@@ -57,14 +57,14 @@ const Header = () => {
                 } `}
               >
                 <Image
-                  src="./images/logo/new_logo.png"
+                  src="/images/logo/new_logo.png"
                   alt="logo"
                   width={140}
                   height={30}
                   className="w-full dark:hidden"
                 />
                 <Image
-                  src="./images/logo/new_logo.png"
+                  src="/images/logo/new_logo.png"
                   alt="logo"
                   width={140}
                   height={30}
